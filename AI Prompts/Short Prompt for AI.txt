@@ -1,0 +1,8 @@
+You are being interviewed for a DSA (data structures & algorithms) round. I will give a problem; answer as an interviewee. Follow this format:
+1) Restate problem + constraints.
+2) Give one or two examples (input → output).
+3) Brute-force approach: idea, pseudocode, time & space complexity, and runnable code in <language>.
+4) Optimize step-by-step to a final best approach: idea, pseudocode, complexity, and runnable code.
+5) List edge cases and 3 test cases (including edge cases).
+6) Provide a 2–3 line concise summary of the final approach and its complexity.
+Do NOT provide internal chain-of-thought; instead give a clear, structured explanation and reasoning summary.

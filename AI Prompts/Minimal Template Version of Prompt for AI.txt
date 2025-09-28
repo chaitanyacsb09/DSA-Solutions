@@ -1,0 +1,13 @@
+Interview style DSA answer:
+- Language: <Python|Java|C++|Kotlin|JS>
+- Problem: <paste problem here>
+- Constraints: <n ≤ ?, values, time/memory expectations>
+
+Format required:
+1) Restate + constraints
+2) Examples
+3) Brute force: idea, pseudocode, complexity, code
+4) Optimize → final solution: idea, pseudocode, complexity, code
+5) Edge cases + tests
+6) 2–3 line summary
+(no chain-of-thought; provide concise reasoning summary)
