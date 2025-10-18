@@ -35,7 +35,10 @@ class Solution {
         while(!pq.isEmpty()){
             Pair<Long,Integer> top = pq.poll();
             long currTime = top.first; int currNode = top.second;
-            if (currTime > shortestTimes[currNode]) continue;
+            //As this statement is placed, therefore while processing nbrs, we could use shortestTimes[currNode] in place of currTime
+            //All outdated times would not be processed further, therefore no risk of incorrect updation
+            if (currTime > shortestTimes[currNode]) continue; 
+            
             for(Pair<Integer,Integer> nbrP : graph.get(currNode)){
                 int nbr = nbrP.first, nbrRoadTime = nbrP.second;
                 /*shortestTimes[currNode] + nbrDist < shortestTimes[nbr] : Using this is incorrect, as it might have been modified, 

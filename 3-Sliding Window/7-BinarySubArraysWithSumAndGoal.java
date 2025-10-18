@@ -9,7 +9,7 @@ class Solution {
         for (int right = 0; right < nums.length; right++) {
             currSum += nums[right];
             // <= required < not required : [0,0,0,0,0,0,1,0,0,0] and goal = 0, when right at idx with val 1, then with
-            // left < right : goes into while block : now left == right : right - left + 1 : +1 : incorrect addition to the answer
+            // left < right : does not go into while block : now left == right : right - left + 1 : +1 : incorrect addition to the answer
             while (left <= right && currSum > goal) {
                 currSum -= nums[left];
                 left++;

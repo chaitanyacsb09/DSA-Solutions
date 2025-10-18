@@ -12,6 +12,10 @@ class Solution {
         image[sr][sc] = color;
 
         //Edge Case
+        /*
+        Perform the same process for each pixel that is directly adjacent (pixels that share a side with the original pixel, 
+        either horizontally or vertically) and shares the same color as the starting pixel.
+        */
         if(sColor == color) return image;
         
         while(!q.isEmpty()){

@@ -14,7 +14,7 @@ class Solution {
 
         Queue<int[]> pq = new LinkedList<>();
         boolean[][] isVisited = new boolean[n][n];
-        pq.add(new int[]{1,0,0});
+        pq.add(new int[]{1,0,0}); //dist, row, col
         isVisited[0][0] = true;
 
         while(!pq.isEmpty()){

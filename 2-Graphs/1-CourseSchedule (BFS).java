@@ -9,7 +9,7 @@ class Solution {
                 int to = prerequisites[i][1];
 
                 adjList.get(from).add(to);
-        inDegree[to]++;
+                inDegree[to]++;
             }
         
         Queue<Integer> q = new LinkedList<>();

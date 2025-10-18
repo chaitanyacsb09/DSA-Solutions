@@ -62,6 +62,7 @@ class Solution {
             for(int i = 0; i < 4; i++){
                 int adjX = oprRow + delRow[i], adjY = oprCol + delCol[i];
                 
+                //If adj part of an island, then it would have been already marked true
                 if(!isIdxValid(adjX, adjY, rows, cols) || !isVisited[adjX][adjY]){
                     continue;
                 }
