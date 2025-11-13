@@ -21,7 +21,7 @@ class Solution {
                 return true;
             }
         }
-        return false
+        return false;
     }
     
     private boolean detectCycleBfs(int source, int V, boolean[]isVisited, Map<Integer, List<Integer>> adjMap){

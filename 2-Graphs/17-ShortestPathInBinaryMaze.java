@@ -1,6 +1,7 @@
 
 class Solution {
     //8-Directional : 4 Edges + 4 Corners
+    //Could use for loop i = -1 .. 1 and j = -1..1 | all 8 possibilities covered with 0,0 too
     int[][] adjDel = {{0,-1},{1,-1},{1,0},{1,1},{0,1},{-1,1},{-1,0},{-1,-1}};
 
     private boolean isIdxValid(int rowIdx, int colIdx, int dimension){

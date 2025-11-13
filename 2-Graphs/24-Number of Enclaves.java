@@ -17,8 +17,10 @@ class Solution {
     }
     public int numEnclaves(int[][] grid) {
         int numRows = grid.length, numCols = grid[0].length;
+        //SC: O(N x M)
         boolean[][] isVisited = new boolean[numRows][numCols];
 
+        //TC: Both for loops would combinely give tc of O(N x M)
         for(int row = 0; row < numRows; row++){
             if(!isVisited[row][0] && grid[row][0] == 1){
                 walkLand(row, 0, isVisited, grid);
@@ -27,7 +29,7 @@ class Solution {
                 walkLand(row, numCols-1, isVisited, grid);
             }
         }
-
+        
         for(int col = 1; col < numCols - 1; col++){
             if(!isVisited[0][col] && grid[0][col] == 1){
                 walkLand(0, col, isVisited, grid);
@@ -37,6 +39,7 @@ class Solution {
             }
         }
 
+        //O(N x M)
         int unexplorableLandCells = 0;
         for(int row = 1; row < numRows - 1; row++){
             for(int col = 1; col < numCols - 1; col++){
