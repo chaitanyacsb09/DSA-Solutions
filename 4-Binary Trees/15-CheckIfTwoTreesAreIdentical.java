@@ -16,6 +16,8 @@
 class Solution { 
     public boolean isSameTree(TreeNode p, TreeNode q) {
         if(p == null && q == null) return true;
+        
+        //Following If conditions could be combined
         if(p == null || q == null){
             return false;
         }

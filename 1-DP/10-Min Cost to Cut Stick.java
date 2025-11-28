@@ -8,9 +8,9 @@ class Solution {
         
         int[][] dp = new int[m + 2][m + 2];
         
-        for (int diff = 2; diff <= m + 1; ++diff) {
-            for (int left = 0; left <= (m + 1) - diff; ++left) {
-                int right = left + diff;
+        for (int rodLength = 2; rodLength <= m + 1; ++rodLength) {
+            for (int left = 0; left <= (m + 1) - rodLength; ++left) {
+                int right = left + rodLength;
                 int ans = Integer.MAX_VALUE;
                 for (int cutIdx = left + 1; cutIdx < right; ++cutIdx) {
                     ans = Math.min(ans, dp[left][cutIdx] + dp[cutIdx][right] + newCuts[right] - newCuts[left]);

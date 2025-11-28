@@ -19,7 +19,7 @@ class Solution {
         Queue<TreeNode> q = new LinkedList<>();
         q.add(root);
         List<Integer> rightView = new ArrayList<>();
-        
+        //Here if we put, right then left, then similar to left view, first node at each level could be considered
         while(!q.isEmpty()){
             int size = q.size();
             while(size > 0){

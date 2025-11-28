@@ -10,8 +10,6 @@ class Solution {
     }
 
     public int minCut(String s) {
-        // code here
-        // code here
         int n = s.length();
         boolean[][] isPalindrome = new boolean[n][n];
         for(int i = 0; i < n; i++){

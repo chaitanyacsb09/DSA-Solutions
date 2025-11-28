@@ -86,7 +86,7 @@ class Solution {
     }
 }
 
-//OPTIMAL: TC: O(LOG(M+N))
+//OPTIMAL: TC: O(LOG(Min(M,N)))
 class Solution {
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         int m = nums1.length, n = nums2.length;

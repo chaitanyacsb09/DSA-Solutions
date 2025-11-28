@@ -8,7 +8,7 @@ class Solution {
             freq.merge(nums[i], 1, Integer::sum);
         }
         int majThreshold = (int) Math.floor(n / 3);
-        for (int num : nums) {
+        for (int num : nums) { //Could also iterate over Map Entries, no need to remove any
             if (freq.containsKey(num) && freq.get(num) > majThreshold) {
                 majEls.add(num);
                 freq.remove(num);

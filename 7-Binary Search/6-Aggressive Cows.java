@@ -16,6 +16,8 @@ class Solution {
     }
     public int aggressiveCows(int[] stalls, int k) {
         // code here
+
+        //Edge case, for if k > stalls.length
         Arrays.sort(stalls);
         int left = 1, right = stalls[stalls.length - 1] - stalls[0]; //This is the Max Distance
         int maxSeparationBetweenCows = 1;

@@ -1,4 +1,5 @@
 class Solution {
+    //Total Num of Characters in all words //Time Complexity
     private boolean validateInputAndBuildGraph(List<List<Integer>> graph, String[] words){
         int numWords = words.length;
         for(int i = 0; i < 26; i++){
@@ -26,6 +27,8 @@ class Solution {
         }
         return true;
     }
+
+    //O(V+E) : here constant O(26 + 26 ^ 2) : atMax
     private List<Integer> topoSort(int V, List<List<Integer>> graph) {
         // code here
         int[] inDegree = new int[V];
@@ -73,6 +76,7 @@ class Solution {
         }
         
         StringBuilder sb = new StringBuilder();
+        //O(26)
         for(int numRep : topoSort){
             if(isCharPresent[numRep] == false) continue;
             sb.append((char)(numRep + 'a')); 

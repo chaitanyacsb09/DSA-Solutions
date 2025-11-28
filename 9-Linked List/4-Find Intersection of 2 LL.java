@@ -87,9 +87,6 @@ public class Solution {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         ListNode a = headA, b = headB;
         while(a != b){
-            if(a == b){
-                return a;
-            }
             //Assigning the ptrs to other list, when one is exhausted, helps in aligning the two pointers
             //such that, they start at the same distance from the intersection in the 2nd iteration
             //Or aligned before the end of both the lists if no intersection point is there

@@ -6,6 +6,7 @@ class Solution {
         int[] dist = new int[V];
         Arrays.fill(dist, (int)1e8);
         dist[src] = 0;
+        
         //N-1 Relaxatinos
         for(int i = 1; i <= V-1; i++){
             for(int[] edge: edges){
