@@ -27,7 +27,7 @@ class Solution {
         while(!q.isEmpty()){
             int[] front = q.poll();
             int row = front[0], col = front[1], minutesRequiredToRot = front[2];
-            minutesRequired = Math.max(minutesRequired, minutesRequiredToRot);
+            minutesRequired = minutesRequiredToRot;
 
             //Check for Fresh Oranges in Adjacents
             for(int[] del : adjDel){

@@ -48,12 +48,6 @@ class Solution {
 
 //----------WITH ARRAY
 class Solution {
-    private void incrementCharCount(char C, Map<Character, Integer> mp){
-        mp.put(C, mp.getOrDefault(C, 0) + 1);
-    }
-    private void decrementCharCount(char C, Map<Character, Integer> mp){
-        mp.put(C, mp.getOrDefault(C, 0) - 1);
-    }
     public String minWindow(String s, String t) {
         int[] charCount = new int[128];
         

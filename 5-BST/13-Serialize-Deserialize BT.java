@@ -20,7 +20,7 @@ public class Codec {
     public String serialize(TreeNode root) {
         StringBuilder serializedB = new StringBuilder();
         if(root == null){
-            return serializedB.toString();.
+            return serializedB.toString();
         }
         Queue<TreeNode> q = new LinkedList<>();
         q.add(root);

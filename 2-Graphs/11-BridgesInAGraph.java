@@ -15,7 +15,7 @@ class Solution {
                 /* Decide if this edge is a bridge
                 the lowest node according to time of insertion to which the adjacent node could reach to, 
                 if its greater than the time of insertion of curr node, then removing the edge between adjacent node, and curr node, 
-                will make it impossible for the adj node to ever reach to this curr node, hence it will create a graph. */
+                will make it impossible for the adj node to ever reach to this curr node, hence it will create a different component. */
                 if (lowestTimeOfInsertionAmongAdj[adj] > timeOfInsertion[node]) {
                     bridges.add(new ArrayList<>(Arrays.asList(node, adj)));
                 }

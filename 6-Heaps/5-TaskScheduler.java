@@ -17,7 +17,7 @@ class Solution {
         int cpuIntervals = 0;
 
         while(!maxHeap.isEmpty()){
-            int slotsInACycle = n + 1; //As a task cannot be repeated before n intervals, therefore one slot cycle must be of n+ 1 length
+            int slotsInACycle = n + 1; //As a task cannot be repeated before n intervals, therefore one slot cycle must be of n + 1 length
             int scheduledSlots = 0;
             List<Integer> remainingTasks = new ArrayList<>(); //To store the tasks, if it can occur in upcoming cycles
             while(slotsInACycle > scheduledSlots && !maxHeap.isEmpty()){

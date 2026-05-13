@@ -4,16 +4,16 @@ class Solution {
                                         .mapToObj(i -> new ArrayList<Integer>())
                                         .collect(Collectors.toList());
         int[] inDegree = new int[numCourses];
-            for (int i = 0; i < prerequisites.length; i++) {
-                int from = prerequisites[i][0];
-                int to = prerequisites[i][1];
+        for (int i = 0; i < prerequisites.length; i++) {
+            int from = prerequisites[i][0];
+            int to = prerequisites[i][1];
 
-                adjList.get(from).add(to);
-                inDegree[to]++;
-            }
+            adjList.get(from).add(to);
+            inDegree[to]++;
+        }
         
         Queue<Integer> q = new LinkedList<>();
-        for(int i=0; i < numCourses; i++){
+        for(int i = 0; i < numCourses; i++){
             if(inDegree[i] == 0){
                 q.add(i);
             }

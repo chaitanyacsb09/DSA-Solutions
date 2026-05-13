@@ -160,12 +160,7 @@ class Solution {
         
         for(int i = 0; i < numSections; i++){
             int currSectionLen = stations[i + 1] - stations[i]; 
-            int numStationsRequiredForCurrSection = (int)(currSectionLen/dist);
-            
-            if(currSectionLen % dist == 0){
-                //if len = 8, and dist = 2, therefor 8/2 = 4, one extra, only 3 required to minimize the adj section len to 2
-                numStationsRequiredForCurrSection--;
-            }
+            int numStationsRequiredForCurrSection = (int) Math.ceil(currSectionLen / dist);
             numStationsRequired += numStationsRequiredForCurrSection;
         }
         

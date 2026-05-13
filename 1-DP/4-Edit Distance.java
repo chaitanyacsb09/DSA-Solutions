@@ -37,7 +37,7 @@ class Solution {
 //Memoized Solution
 class Solution {
     private int minDistanceUtil(int i1, int i2, char[] s1, char[] s2, int[][] dp){
-        if(i1 < 0) return i2 +1;
+        if(i1 < 0) return i2 + 1;
         if(i2 < 0) return i1 + 1;
         
         if(dp[i1][i2] != -1){

@@ -1,15 +1,15 @@
-class Pair{
-    int first;
-    int second;
-    public Pair(int _f, int _s){
-        first = _f;
-        second = _s;
+class DistanceNodePair{
+    int distanceToReach;
+    int node;
+    public DistanceNodePair(int distanceToReach, int node){
+        this.distanceToReach = distanceToReach;
+        this.node = node;
     }
 }
 class Solution {
     public int[] dijkstra(int V, int[][] edges, int src) {
         // code here
-        List<List<Pair>> adj = new ArrayList<>();
+        List<List<DistanceNodePair>> adj = new ArrayList<>();
         int[] distances = new int[V];
         for(int i = 0; i < V; i++){
             distances[i] = (int)1e9;
@@ -17,25 +17,36 @@ class Solution {
         }
         
         for(int[] edge: edges){
-            int u = edge[0], v = edge[1];
-            int weight = edge[2];
-            adj.get(u).add(new Pair(v, weight));
-            adj.get(v).add(new Pair(u, weight));
+            int nodeA = edge[0], nodeB = edge[1];
+            int distance = edge[2];
+            adj.get(nodeA).add(new DistanceNodePair(distance, nodeB));
+            adj.get(nodeB).add(new DistanceNodePair(distance, nodeA));
         }
         
-        PriorityQueue<Pair> pq = new PriorityQueue<>((x, y) -> x.first - y.first);
+        PriorityQueue<DistanceNodePair> pq = new PriorityQueue<>((x, y) -> x.distanceToReach - y.distanceToReach);
         
-        pq.add(new Pair(0, src));
+        pq.add(new DistanceNodePair(0, src));
         distances[src] = 0;
         
+        /*
+        Input: V = 3, edges[][] = [[0, 1, 1], [1, 2, 3], [0, 2, 6]], src = 2
+                     0   1   2
+        distances = [1e9, 1e9, 1e9] | pq =  
+        0: (1,1) (6,2)
+        1: (1,0) (3,2)
+        2:  (3,1) (6,0)
+        -------------------------------
+    
+        */
         while(!pq.isEmpty()){
-            Pair p = pq.poll();
-            int dist = p.first, node = p.second;
-            for(Pair nbrP : adj.get(node)){
-                int nbr = nbrP.first, nbrDist = nbrP.second;
+            DistanceNodePair currentDistanceNodePair = pq.poll();
+            int dist = currentDistanceNodePair.distanceToReach, node = currentDistanceNodePair.node;
+            
+            for(DistanceNodePair nbrP : adj.get(node)){
+                int nbr = nbrP.node, nbrDist = nbrP.distanceToReach;
                 if(distances[node] + nbrDist < distances[nbr]){
                     distances[nbr] = distances[node] + nbrDist;
-                    pq.add(new Pair(distances[nbr], nbr));
+                    pq.add(new DistanceNodePair(distances[nbr], nbr));
                 }
             }
         }

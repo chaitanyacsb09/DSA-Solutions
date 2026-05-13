@@ -1,3 +1,4 @@
+//TC: O(N * M) | SC: O(N x M)
 class Solution {
     private int[][] adjDel = {{0,-1},{1,0},{0,1},{-1,0}};
     private static boolean isIdxValid(int rowIdx, int colIdx, int numRows, int numCols){

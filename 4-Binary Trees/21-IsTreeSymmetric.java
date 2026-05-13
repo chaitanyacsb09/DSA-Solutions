@@ -18,6 +18,8 @@ class Solution {
         if(a == null && b == null){
             return true;
         }
+
+        //These 2 if conditions could be combined
         if(a == null || b == null){
             return false;
         }

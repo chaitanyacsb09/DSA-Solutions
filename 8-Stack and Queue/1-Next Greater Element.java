@@ -2,14 +2,14 @@ class Solution {
     public int[] nextGreaterElement(int[] nums1, int[] nums2) {
         int[] nextGreater = new int[(int)1e4 + 1];
 
-        //Monotonic Decreasing Stack : bottom to top (Decreasing Order)
+        //Monotonic Decreasing Stack : top to bottom (Decreasing Order)
         Stack<Integer> st = new Stack<>();
-        
+    
         //Eval Greater Element to Right, for Each nums2 El
         for(int i = nums2.length - 1; i >= 0; i--){
             int currEl = nums2[i];
             
-            //Remove all the elements less than or equal to currEL, to maintain Decreasing order
+            //Remove all the elements less than or equal to currEL, to find the next greater to right
             //Also after doing this, at the top of the stack, we'll have the first element to the right greater to currEl 
             while(!st.isEmpty() && st.peek() <= currEl){
                 st.pop();
